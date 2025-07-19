@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <h1>📚 Quiz App</h1>
+          </div>
+          <nav class="sidebar-nav">
+            <div class="nav-section">
+              <h3>Subjects</h3>
+              <ul id="subject-list" class="subject-list">
+                <!-- Subjects will be loaded dynamically -->
+              </ul>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+              <h2>Welcome to Quiz Application</h2>
+              <p>Select a subject from the sidebar to start your quiz</p>
+              <div class="features">
+                <div class="feature">
+                  <span class="feature-icon">📝</span>
+                  <span>Multiple Choice Questions</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">📊</span>
+                  <span>Progress Tracking</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">💾</span>
+                  <span>Auto Save Progress</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="quiz-container" class="quiz-container hidden">
+            <div class="quiz-header">
+              <h2 id="quiz-title">Quiz Title</h2>
+              <div class="quiz-progress">
+                <div class="progress-bar">
+                  <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="progress-text" class="progress-text">0 / 0</span>
+              </div>
+            </div>
+
+            <div class="quiz-content">
+              <div id="question-container" class="question-container">
+                <h3 id="question-text" class="question-text"></h3>
+                <div id="options-container" class="options-container">
+                  <!-- Options will be loaded dynamically -->
+                </div>
+              </div>
+
+              <div class="quiz-controls">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Previous</button>
+                <button id="next-btn" class="btn btn-primary" disabled>Next</button>
+                <button id="finish-btn" class="btn btn-success hidden">Finish Quiz</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="results-container" class="results-container hidden">
+            <div class="results-content">
+              <h2>Quiz Results</h2>
+              <div class="score-display">
+                <div class="score-circle">
+                  <span id="score-percentage">0%</span>
+                </div>
+                <div class="score-details">
+                  <p id="score-text">You scored 0 out of 0</p>
+                  <p id="score-message">Great job!</p>
+                </div>
+              </div>
+              <div class="results-breakdown">
+                <h3>Question Breakdown</h3>
+                <div id="results-list" class="results-list">
+                  <!-- Results will be loaded dynamically -->
+                </div>
+              </div>
+              <div class="results-actions">
+                <button id="restart-btn" class="btn btn-primary">Restart Quiz</button>
+                <button id="home-btn" class="btn btn-secondary">Back to Home</button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
